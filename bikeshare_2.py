@@ -17,6 +17,7 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
+
     
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     city = input("Please choose a city: new york city, chicago, or washington\n").lower()
@@ -25,16 +26,8 @@ def get_filters():
         city = input ("Incorrect input. Please choose chicago, new york city or washington: ").lower()
         
     # show them their selection
-    while city:
-        if city == 'chicago':
-            print("Great. You entered {}.".format(city))
-            break
-        if city == 'new york city':
-            print("Great. You entered {}.".format(city))
-            break
-        if city == 'washington':
-            print("Great. You entered {}.".format(city))
-            break
+
+    print("Great. You entered {}.".format(city))
 
 
     # TO DO: get user input for month (all, january, february, ... , june)
@@ -45,28 +38,8 @@ def get_filters():
         month = input ("Incorrect input. Please pick a month: january, february, march, april, may, or june. If you would like no         month filter, type all\n").lower()
         
     # show them their selection 
-    while month:
-        if month == 'january':
-            print("Great. You entered {}.".format(month))
-            break
-        if month == 'february':
-            print("Great. You entered {}.".format(month))
-            break
-        if month == 'march':
-            print("Great. You entered {}.".format(month))
-            break
-        if month == 'april':
-            print("Great. You entered {}.".format(month))
-            break
-        if month == 'may':
-            print("Great. You entered {}.".format(month))
-            break
-        if month == 'june':
-            print("Great. You entered {}.".format(month))
-            break
-        if month == 'all':
-            print("Great. You entered {}.".format(month))
-            break
+
+    print("Great. You entered {}.".format(month))
 
         
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
@@ -75,31 +48,49 @@ def get_filters():
     # test input
     day = input ("Incorrect input. Please pick a day of the week: sunday, monday, tuesday, wednesday, thursday, friday, saturday, or sunday. If you would like no day filter, type all\n").lower()
     # show them their selection
-    while day:
-        if day == 'sunday':
-            print("Great. You entered {}.".format(day))
-            break
-        if day == 'monday':
-            print("Great. You entered {}.".format(day))
-            break
-        if day == 'tuesday':
-            print("Great. You entered {}.".format(day))
-            break
-        if day == 'wednesday':
-            print("Great. You entered {}.".format(day))
-            break
-        if day == 'thursday':
-            print("Great. You entered {}.".format(day))
-            break
-        if day == 'friday':
-            print("Great. You entered {}.".format(day))
-            break
-        if day == 'saturday':
-            print("Great. You entered {}.".format(day))
-            break
-        if day == 'all':
-            print("Great. You entered {}.".format(day))
-            break
+    
+    print("Great. You entered {}.".format(day))
+            
+    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+
+
+    # get user input for month (all, january, february, ... , june)
+
+
+    # get user input for day of week (all, monday, tuesday, ... sunday)
+    
+    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    city = input("Please choose a city: new york city, chicago, or washington\n").lower()
+    # test input
+    while city not in ['chicago', 'new york city', 'washington']:
+        city = input ("Incorrect input. Please choose chicago, new york city or washington: ").lower()
+        
+    # show them their selection
+    print("Great. You entered {}.".format(city))
+
+
+    # TO DO: get user input for month (all, january, february, ... , june)
+    month = input("Please pick a month: january, february, march, april, may, or june. If you would like no month filter, type all\n").lower()
+    
+    # test input
+    while month not in ['january', 'february', 'march', 'april', 'may', 'june', 'all']:
+        month = input ("Incorrect input. Please pick a month: january, february, march, april, may, or june. If you would like no month filter, type all\n").lower()
+        
+    # show them their selection 
+    print("Great. You entered {}.".format(month))
+          
+
+    # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
+    day = input("Please pick a day of the week: sunday, monday, tuesday, wednesday, thursday, friday, saturday, or sunday. If you would like no day filter, type all\n").lower()
+    
+    #test input
+    while day not in ['sunday','monday','tuesday','wednesday','thursday','friday','saturday','sunday']:
+
+    day = input ("Incorrect input. Please pick a day of the week: sunday, monday, tuesday, wednesday, thursday, friday, saturday, or sunday. If you would like no day filter, type all\n").lower()
+    # show them their selection
+    
+    print("Great. You entered {}.".format(day))
+            
         
     print('-'*40)
     return city, month, day
@@ -150,6 +141,7 @@ def time_stats(df):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
+
     # TO DO: display the most common month
     popular_month = df['month'].mode()[0]
     print('Most Popular Month:', popular_month)
@@ -158,6 +150,25 @@ def time_stats(df):
     # TO DO: display the most common day of week   
     popular_day = df['day_of_week'].mode()[0]
     print('Most Popular Day of the Week:', popular_day)
+
+    # display the most common month
+
+
+    # display the most common day of week
+
+
+    # display the most common start hour
+
+
+    # TO DO: display the most common month
+    popular_month = df['month'].mode()[0]
+    print('Most Popular Month:', popular_month)
+
+
+    # TO DO: display the most common day of week   
+    popular_day = df['day_of_week'].mode()[0]
+    print('Most Popular Day of the Week:', popular_day)
+
 
     # TO DO: display the most common start hour
     df['hour'] = df['Start Time'].dt.hour
