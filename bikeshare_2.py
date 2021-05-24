@@ -25,16 +25,7 @@ def get_filters():
         city = input ("Incorrect input. Please choose chicago, new york city or washington: ").lower()
         
     # show them their selection
-    while city:
-        if city == 'chicago':
-            print("Great. You entered {}.".format(city))
-            break
-        if city == 'new york city':
-            print("Great. You entered {}.".format(city))
-            break
-        if city == 'washington':
-            print("Great. You entered {}.".format(city))
-            break
+    print("Great. You entered {}.".format(city))
 
 
     # TO DO: get user input for month (all, january, february, ... , june)
@@ -51,34 +42,14 @@ def get_filters():
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     day = input("Please pick a day of the week: sunday, monday, tuesday, wednesday, thursday, friday, saturday, or sunday. If you would like no day filter, type all\n").lower()
     
-    # test input
+    #test input
+    while day not in ['sunday','monday','tuesday','wednesday','thursday','friday','saturday','sunday']:
+
     day = input ("Incorrect input. Please pick a day of the week: sunday, monday, tuesday, wednesday, thursday, friday, saturday, or sunday. If you would like no day filter, type all\n").lower()
     # show them their selection
-    while day:
-        if day == 'sunday':
-            print("Great. You entered {}.".format(day))
-            break
-        if day == 'monday':
-            print("Great. You entered {}.".format(day))
-            break
-        if day == 'tuesday':
-            print("Great. You entered {}.".format(day))
-            break
-        if day == 'wednesday':
-            print("Great. You entered {}.".format(day))
-            break
-        if day == 'thursday':
-            print("Great. You entered {}.".format(day))
-            break
-        if day == 'friday':
-            print("Great. You entered {}.".format(day))
-            break
-        if day == 'saturday':
-            print("Great. You entered {}.".format(day))
-            break
-        if day == 'all':
-            print("Great. You entered {}.".format(day))
-            break
+    
+    print("Great. You entered {}.".format(day))
+            
         
     print('-'*40)
     return city, month, day
